@@ -1,5 +1,6 @@
 package com.example.tictactoe
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -68,27 +69,65 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkforVic(s: String): Boolean {
-
+        // Horizontal Check
         if(match(binding.a1,s)&& match(binding.a2,s)&& match(binding.a3,s))
+        {
+            binding.a1.setTextColor(Color.RED)
+            binding.a2.setTextColor(Color.RED)
+            binding.a3.setTextColor(Color.RED)
             return true
+        }
         if(match(binding.b1,s)&& match(binding.b2,s)&& match(binding.b3,s))
+        {
+            binding.b1.setTextColor(Color.RED)
+            binding.b2.setTextColor(Color.RED)
+            binding.b3.setTextColor(Color.RED)
             return true
+        }
         if(match(binding.c1,s)&& match(binding.c2,s)&& match(binding.c3,s))
+        {
+            binding.c1.setTextColor(Color.RED)
+            binding.c2.setTextColor(Color.RED)
+            binding.c3.setTextColor(Color.RED)
             return true
-
+        }
+        // Vertical Check
         if(match(binding.a1,s)&& match(binding.b1,s)&& match(binding.c1,s))
+        {
+            binding.a1.setTextColor(Color.RED)
+            binding.b1.setTextColor(Color.RED)
+            binding.c1.setTextColor(Color.RED)
             return true
+        }
         if(match(binding.a2,s)&& match(binding.b2,s)&& match(binding.c2,s))
+        {
+            binding.a2.setTextColor(Color.RED)
+            binding.b2.setTextColor(Color.RED)
+            binding.c2.setTextColor(Color.RED)
             return true
+        }
         if(match(binding.a3,s)&& match(binding.b3,s)&& match(binding.c3,s))
+        {
+            binding.a3.setTextColor(Color.RED)
+            binding.b3.setTextColor(Color.RED)
+            binding.c3.setTextColor(Color.RED)
             return true
-
+        }
+        // Diagonal Check
         if(match(binding.a1,s)&& match(binding.b2,s)&& match(binding.c3,s))
+        {
+            binding.a1.setTextColor(Color.RED)
+            binding.b2.setTextColor(Color.RED)
+            binding.c3.setTextColor(Color.RED)
             return true
+        }
         if(match(binding.c1,s)&& match(binding.b2,s)&& match(binding.a3,s))
+        {
+            binding.a3.setTextColor(Color.RED)
+            binding.b2.setTextColor(Color.RED)
+            binding.c1.setTextColor(Color.RED)
             return true
-
-
+        }
         return false
     }
 
@@ -120,6 +159,15 @@ class MainActivity : AppCompatActivity() {
 
         currentTurn = firstTurn
         setTurnLabel()
+        binding.a1.setTextColor(Color.BLACK)
+        binding.a2.setTextColor(Color.BLACK)
+        binding.a3.setTextColor(Color.BLACK)
+        binding.b1.setTextColor(Color.BLACK)
+        binding.b2.setTextColor(Color.BLACK)
+        binding.b3.setTextColor(Color.BLACK)
+        binding.c1.setTextColor(Color.BLACK)
+        binding.c2.setTextColor(Color.BLACK)
+        binding.c3.setTextColor(Color.BLACK)
     }
 
     private fun fullBoard(): Boolean {
